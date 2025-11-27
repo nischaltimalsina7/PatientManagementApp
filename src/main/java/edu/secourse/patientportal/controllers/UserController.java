@@ -6,15 +6,28 @@ import edu.secourse.patientportal.services.UserService;
 import java.util.List;
 import java.util.Scanner;
 
-
+/**
+ * Console-based controller for user-related operations.
+ * Reads input from the user and delegates to UserService.
+ */
 public class UserController {
 
     private final UserService userService;
 
+    /**
+     * Creates a new UserController.
+     *
+     * @param userService service that performs user operations
+     */
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
+    /**
+     * Handles the "create user" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void createUser(Scanner scanner) {
         System.out.println("\n--- Create User ---");
         System.out.print("Username: ");
@@ -40,6 +53,11 @@ public class UserController {
         }
     }
 
+    /**
+     * Handles the "update user" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void updateUser(Scanner scanner) {
         System.out.println("\n--- Update User ---");
         System.out.print("Account number: ");
@@ -66,6 +84,11 @@ public class UserController {
         }
     }
 
+    /**
+     * Handles the "remove user" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void removeUser(Scanner scanner) {
         System.out.println("\n--- Remove User ---");
         System.out.print("Account number: ");
@@ -79,6 +102,9 @@ public class UserController {
         }
     }
 
+    /**
+     * Prints all users to the console.
+     */
     public void listUsers() {
         System.out.println("\n--- All Users ---");
         List<User> users = userService.getAllUsers();
@@ -96,6 +122,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Reads an integer from the console, re-prompting until a valid value is entered.
+     *
+     * @param scanner scanner connected to System.in
+     * @return parsed integer value
+     */
     private int readInt(Scanner scanner) {
         while (true) {
             String line = scanner.nextLine();
@@ -107,6 +139,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Converts an empty string to null.
+     *
+     * @param value input string
+     * @return null if blank, otherwise the original string
+     */
     private String emptyToNull(String value) {
         return (value == null || value.isBlank()) ? null : value;
     }

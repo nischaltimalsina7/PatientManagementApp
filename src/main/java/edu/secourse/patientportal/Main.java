@@ -7,7 +7,17 @@ import edu.secourse.patientportal.services.UserService;
 
 import java.util.Scanner;
 
+/**
+ * Entry point for the Patient Management App.
+ * Provides a simple console-based menu to exercise the system features.
+ */
 public class Main {
+
+    /**
+     * Starts the console application and displays the main menu loop.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         UserService userService = new UserService();
         AppointmentService appointmentService = new AppointmentService(userService);

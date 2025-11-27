@@ -8,14 +8,28 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Console-based controller for appointment-related operations.
+ * Reads input from the user and delegates to AppointmentService.
+ */
 public class AppointmentController {
 
     private final AppointmentService appointmentService;
 
+    /**
+     * Creates a new AppointmentController.
+     *
+     * @param appointmentService service that performs appointment operations
+     */
     public AppointmentController(AppointmentService appointmentService) {
         this.appointmentService = appointmentService;
     }
 
+    /**
+     * Handles the "create appointment" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void createAppointment(Scanner scanner) {
         System.out.println("\n--- Create Appointment ---");
         System.out.print("Patient account number: ");
@@ -35,6 +49,11 @@ public class AppointmentController {
         }
     }
 
+    /**
+     * Handles the "cancel appointment" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void cancelAppointment(Scanner scanner) {
         System.out.println("\n--- Cancel Appointment ---");
         System.out.print("Appointment ID: ");
@@ -48,6 +67,11 @@ public class AppointmentController {
         }
     }
 
+    /**
+     * Lists all appointments for a given user account number.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void listAppointmentsForUser(Scanner scanner) {
         System.out.println("\n--- List Appointments For User ---");
         System.out.print("User account number: ");
@@ -68,6 +92,11 @@ public class AppointmentController {
         }
     }
 
+    /**
+     * Handles the "modify appointment time" flow using console input.
+     *
+     * @param scanner scanner connected to System.in
+     */
     public void modifyAppointmentTime(Scanner scanner) {
         System.out.println("\n--- Modify Appointment Time ---");
         System.out.print("Appointment ID: ");
@@ -84,6 +113,12 @@ public class AppointmentController {
         }
     }
 
+    /**
+     * Reads an integer from the console, re-prompting until a valid value is entered.
+     *
+     * @param scanner scanner connected to System.in
+     * @return parsed integer value
+     */
     private int readInt(Scanner scanner) {
         while (true) {
             String line = scanner.nextLine();
@@ -95,6 +130,12 @@ public class AppointmentController {
         }
     }
 
+    /**
+     * Reads a LocalDateTime from the console using ISO-8601 format.
+     *
+     * @param scanner scanner connected to System.in
+     * @return parsed LocalDateTime
+     */
     private LocalDateTime readDateTime(Scanner scanner) {
         while (true) {
             String line = scanner.nextLine();
