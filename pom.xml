@@ -11,10 +11,10 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>22</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
     </properties>
 
@@ -36,7 +36,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <release>22</release>
+                    <release>21</release>
                 </configuration>
             </plugin>
 
